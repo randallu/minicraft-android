@@ -7,8 +7,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.util.DisplayMetrics;
-import android.view.Window;
-import android.view.WindowManager;
+
 public class MinicraftActivity extends Activity {
 	/** Called when the activity is first created. */
 	
@@ -18,14 +17,6 @@ public class MinicraftActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		/*
-		
-		getWindow().setFlags(
-				WindowManager.LayoutParams.FLAG_FULLSCREEN,
-				WindowManager.LayoutParams.FLAG_FULLSCREEN
-		);*/
-
 
 		setContentView(R.layout.main);
 
@@ -47,8 +38,6 @@ public class MinicraftActivity extends Activity {
 		wakelock = pm.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "Minicraft");
 		wakelock.acquire();
 		game.start();
-	
-
 	}
 	@Override
 	protected void onPause() {

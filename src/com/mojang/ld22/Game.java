@@ -8,10 +8,6 @@ import org.nushackers.Minicraft.R;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.util.Log;
 import android.view.SurfaceHolder;
 
 import com.mojang.ld22.entity.Player;
@@ -29,7 +25,6 @@ import com.mojang.ld22.screen.WonMenu;
 
 public class Game implements Runnable {
 	private static final long serialVersionUID = 1L;
-	private Random random = new Random();
 	public static final String NAME = "Minicraft";
 	public static final int HEIGHT = 120;
 	public static final int WIDTH = 220;
@@ -86,14 +81,10 @@ public class Game implements Runnable {
 
 
 	private Resources res;
-	//private Rect srcRect = new Rect(0, 0, image.getWidth(), image.getHeight());
-	//private Rect desRect = new Rect(0, 0, image.getWidth()*SCALE,image.getHeight()*SCALE);
-
-	
 	private GameView view;
 	
 	public Game(GameView view){
-		this.res = view.context.getResources();
+		this.res = GameView.context.getResources();
 		this.view = view;
 		init();
 	}
